@@ -6,13 +6,18 @@ import MiddleContainer from './MiddleContainer';
 import './Nugen.css';
 
 class Nugen extends Component {
-
+    constructor(props){
+        super(props);
+        this.state = {
+            menus: ["Home","About","Contact","Gallery","Portfolio"]
+        };
+    }
     render() {
         return (
             <div className="container">
-                <Menu/>
+                <Menu menus={this.state.menus} />
                 <MiddleContainer/>
-                <Footer/>
+                <Footer txt="TExt from parent component"/>
             </div>
         );
     }

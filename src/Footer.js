@@ -5,7 +5,7 @@ class Footer extends Component{
     render (){
         return (
             <div className="footer">
-                <h1>Testing Footer content</h1>
+                <h1>{ this.props.txt }</h1>
             </div>
         );
     }

@@ -7,18 +7,20 @@ class Menu extends Component {
             <div className="row">
                 <div className="logo-container"></div>
                 <div className="menu-container">
-                    <div className="menu">
-                        <div>Home</div>
-                    </div>
-                    <div className="menu">
-                        <div>About</div>
-                    </div>
-                    <div className="menu">
-                        <div>Contact</div>
-                    </div>
-                    <div className="menu">
-                        <div>Portfolio</div>
-                    </div>
+                    {
+                        this.props.menus
+                        .map((menu) => {
+                            return (
+                                <div className="menu">
+                                    <div>
+                                        { menu.toUpperCase() }
+                                    </div>
+                                </div>
+                            );
+                        })
+                    }
+
+                   
                 </div>
             </div>
         );
