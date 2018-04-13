@@ -4,6 +4,10 @@ import './Menu.css';
 class Menu extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            menuNumber: 5,
+            userName: 'Varun'
+        };
         console.log("menu Component's constructor fired");
     }
 
@@ -12,11 +16,22 @@ class Menu extends Component {
     }
     componentDidMount() {
         console.log("Component has mounted");
-
+        this.setState({menuNumber: 7});
+        this.menuFunction();
+    }
+    menuFunction = () => {
+        console.log("Menu function called");
     }
     componentDidCatch() {
         console.log("Error in component");
     }
+
+    changeState = () =>{
+        this.setState({
+            menuNumber: this.state.menuNumber + 1
+        });
+    }
+
     render() {
         console.log("Render function fired");
         return (
@@ -29,8 +44,10 @@ class Menu extends Component {
                         .map((menu, i) => {
                             return (
                                 <div className="menu" key={i}>
-                                    <div>
+                                    <div onClick={this.menuFunction}>
                                         {menu.toUpperCase()}
+                                        {this.state.menuNumber}
+                                        <input type="text" onKeyUp={this.changeState}/>
                                     </div>
                                 </div>
                             );
