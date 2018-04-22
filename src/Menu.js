@@ -43,6 +43,7 @@ class Menu extends Component {
         this.setState({
             menuNumber: this.state.menuNumber + 1
         });
+				console.log("A single change for testing branch");
 			}
     }
 
