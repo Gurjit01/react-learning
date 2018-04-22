@@ -12,6 +12,8 @@ class Nugen extends Component {
             menus: ["Home","About","Contact","Gallery","Portfolio"]
         };
     }
+		
+
     render() {
         return (
             <div className="container">
