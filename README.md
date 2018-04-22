@@ -1,8 +1,10 @@
-git add . => for adding current folder 
+git add . => for adding current folder
 git commit -m"your message goes here" => for commiting what you have added to stage.
 git push -u origin name_of_branch => for the very first time
 git push => for pushing the changes on server except first push.
 
+
+sshkey added to github
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
