@@ -12,13 +12,13 @@ class Nugen extends Component {
             menus: ["Home","About","Contact","Gallery","Portfolio"]
         };
     }
-		
+
 
     render() {
         return (
             <div className="container">
                 <Menu menus={this.state.menus} />
-                <MiddleContainer/>
+                <MiddleContainer baseUrl={this.props.baseUrl}/>
                 <Footer txt="TExt from parent component"/>
             </div>
         );

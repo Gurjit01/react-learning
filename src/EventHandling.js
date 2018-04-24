@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 class EventHandling extends Component {
 	constructor(props) {
 		super(props);
-		console.log(this.props);
+		// console.log(this.props);
 	}
 
 	changeStateOfText(e,box){
-		console.log(box);
+		// console.log(box);
 	}
 
 	showText(){
-		console.log("Button Clicked");
+		// console.log("Button Clicked");
 	}
 
 	render(){

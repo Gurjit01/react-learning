@@ -7,6 +7,7 @@ class MiddleContainer extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
+			baseUrl: "http://localhost:3000",
 			posts: []
 		};
 	}
@@ -15,8 +16,7 @@ class MiddleContainer extends Component {
 	}
 
 	fetchData(){
-		console.log(this.props.baseUrl + "/posts");
-		fetch(this.props.baseUrl + "/posts")
+		fetch("http://localhost:3000/posts")
 		.then((response) => {
 			return response.json();
 		})

@@ -7,10 +7,11 @@ import Nugen from './Nugen';
 import registerServiceWorker from './registerServiceWorker';
 
 
+const baseUrl= "http://localhost:3000";
 
 
 ReactDOM.render(
-	<Nugen/>,
+	<Nugen baseUrl={baseUrl}/>,
   document.getElementById('root')
 );
 registerServiceWorker();

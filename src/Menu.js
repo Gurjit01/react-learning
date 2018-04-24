@@ -10,8 +10,8 @@ class Menu extends Component {
             menus: this.props.menus
         };
         this.menuFunction();
-				console.log(this.state);
-        console.log("menu Component's constructor fired");
+				// console.log(this.state);
+        // console.log("menu Component's constructor fired");
     }
 
     componentWillMount() {
@@ -19,10 +19,10 @@ class Menu extends Component {
             {menus: ["try","done"]}
         );
         console.log(this.props.menus); */
-        console.log("menu Component's component will mount fired");
+        // console.log("menu Component's component will mount fired");
     }
     componentDidMount() {
-        console.log("Component has mounted");
+        // console.log("Component has mounted");
         this.setState({menuNumber: 7});
         /* setInterval(function()
         {
@@ -31,14 +31,14 @@ class Menu extends Component {
 
     }
     menuFunction = () => {
-        console.log("Menu function called");
+        // console.log("Menu function called");
     }
     componentDidCatch() {
-        console.log("Error in component");
+        // console.log("Error in component");
     }
 
     changeState = (e) => {
-			console.log(e.keyCode);
+			// console.log(e.keyCode);
 			if(e.keyCode == 13){
         this.setState({
             menuNumber: this.state.menuNumber + 1
@@ -47,7 +47,7 @@ class Menu extends Component {
     }
 
     render() {
-        console.log("Render function fired");
+        // console.log("Render function fired");
         return (
             <div className="row">
             {/* <div className="loader" id="loader"></div>  */}
