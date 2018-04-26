@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 import './MiddleContainer.css';
 import EventHandling from './EventHandling';
+import Heading from './Heading';
 import 'whatwg-fetch';
+
 
 class MiddleContainer extends Component {
 	constructor(props){
@@ -36,7 +38,8 @@ class MiddleContainer extends Component {
 								this.state.posts.map(
 									(post)=>{
 										return(
-											<h1>{post.title + ' Written by ' + post.author}</h1>
+											// <Heading title={post.title} author={post.author} id={post.id}/>
+											<Heading {...post}/>
 										)
 									}
 								)
@@ -45,5 +48,8 @@ class MiddleContainer extends Component {
         );
     }
 }
+
+
+
 
 export default MiddleContainer;

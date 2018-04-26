@@ -39,7 +39,7 @@ class Menu extends Component {
 
     changeState = (e) => {
 			// console.log(e.keyCode);
-			if(e.keyCode == 13){
+			if(e.keyCode === 13){
         this.setState({
             menuNumber: this.state.menuNumber + 1
         });

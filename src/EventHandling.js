@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 class EventHandling extends Component {
-	constructor(props) {
-		super(props);
-		// console.log(this.props);
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	// console.log(this.props);
+	// }
 
 	changeStateOfText(e,box){
 		// console.log(box);
