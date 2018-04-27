@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import './Menu.css';
+import Welcome from './Welcome';
 
 class Menu extends Component {
     constructor(props) {
@@ -7,7 +8,8 @@ class Menu extends Component {
         this.state = {
             menuNumber: 5,
             userName: 'Varun',
-            menus: this.props.menus
+            menus: this.props.menus,
+						loggedIn: true
         };
         this.menuFunction();
 				// console.log(this.state);
@@ -51,7 +53,9 @@ class Menu extends Component {
         return (
             <div className="row">
             {/* <div className="loader" id="loader"></div>  */}
-                <div className="logo-container"></div>
+                <div className="logo-container">
+									<Welcome loggedIn={this.state.loggedIn}/>
+								</div>
                 <div className="menu-container">
                     {this
                         .state
