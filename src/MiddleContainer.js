@@ -3,7 +3,7 @@ import './MiddleContainer.css';
 import EventHandling from './EventHandling';
 import Heading from './Heading';
 import 'whatwg-fetch';
-
+import Button from './Button';
 
 class MiddleContainer extends Component {
 	constructor(props){
@@ -50,6 +50,8 @@ class MiddleContainer extends Component {
 									}
 								)
 						}
+
+						<Button/>
 						</div>
         );
     }
