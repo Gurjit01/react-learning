@@ -41,9 +41,9 @@ class Button extends Component{
 		return (
 			<div>
 				<h1>Count is {this.state.count}</h1>
-					{ this.state.countButtons.map((buttonValue)=>{
+					{ this.state.countButtons.map((buttonValue,i)=>{
 						return(
-								<ButtonHTML value={buttonValue} clickHandler={this.increment}/>
+								<ButtonHTML key={i} value={buttonValue} clickHandler={this.increment}/>
 						)
 					}) }
 

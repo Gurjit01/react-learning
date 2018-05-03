@@ -1,10 +1,12 @@
-import React, {Component} from "react";
+import React from "react";
+import './Heading.css';
+
 
 const Heading = (props)=>{
 	return (
-		<div>
-			<h1>{props.title + ' Written by ' + props.author}</h1>
-			<h2>ID of the post is {props.id}</h2>
+		<div className="post-row">
+			<div> {props.id}</div>
+			<div>{props.title + ' Written by ' + props.author}</div>
 		</div>
 	);
 };
