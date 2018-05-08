@@ -4,6 +4,7 @@ import EventHandling from './EventHandling';
 import 'whatwg-fetch';
 import Button from './Button';
 import Post from './Post';
+import {Link} from 'react-router-dom';
 
 class MiddleContainer extends Component {
 	constructor(props){
@@ -26,6 +27,7 @@ class MiddleContainer extends Component {
 
 
 						<Button/>
+						<Link to="/">Go To App Component</Link>
 						<Post baseUrl={this.props.baseUrl}/>
 						</div>
         );

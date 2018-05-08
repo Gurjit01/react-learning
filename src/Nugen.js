@@ -4,6 +4,7 @@ import Menu from './Menu';
 import MiddleContainer from './MiddleContainer';
 
 import './Nugen.css';
+const baseUrl= "http://localhost:3000";
 
 class Nugen extends Component {
     constructor(props){
@@ -18,7 +19,8 @@ class Nugen extends Component {
         return (
             <div className="container">
                 <Menu menus={this.state.menus} />
-                <MiddleContainer baseUrl={this.props.baseUrl}/>
+                {/* <MiddleContainer baseUrl={this.props.baseUrl}/> */}
+                <MiddleContainer baseUrl={baseUrl}/>
                 <Footer txt="TExt from parent component"/>
             </div>
         );
