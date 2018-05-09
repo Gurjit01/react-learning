@@ -81,6 +81,33 @@ class Post extends Component{
 		}
 
 
+		deletePost = (e,id) =>{
+			fetch(this.props.baseUrl + "/posts/" + id, {
+			  method: 'DELETE',
+			  headers: {
+			    'Content-Type': 'application/json'
+			  },
+			  body: JSON.stringify({})
+			})
+			.then((response) => {
+				return response.json();
+			})
+			.then((res)=>{
+				if(res.id == undefined){
+					this.setState({
+						message: "Post has been deleted successfully"
+					});
+					this.fetchPosts();
+				}else{
+					this.setState({
+						message: "Error while deleting post"
+					});
+				}
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+		}
 
 
 
@@ -101,7 +128,7 @@ class Post extends Component{
 									return(
 										// <Heading title={post.title} author={post.author} id={post.id}/>
 
-										<Heading key={i} {...post}/>
+										<Heading key={i} {...post} clickHandler={this.deletePost}/>
 									)
 								}
 							)

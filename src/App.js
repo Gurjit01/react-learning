@@ -14,11 +14,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to Nugen</h1>
           < Gallery/>
         </header>
-				
-				<Link to="/nugen">go To Nugen Component</Link>
+
+				<Link to="/nugen" className="link">go To Nugen Component</Link>
         <p className="App-intro">
-          <Contact/>
         </p>
+				<Contact/>
       </div>
     );
   }

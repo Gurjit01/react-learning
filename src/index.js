@@ -13,7 +13,7 @@ ReactDOM.render(
 	<BrowserRouter>
 		<div>
 			<Route exact path="/" component={App}/>
-			<Route path="/tahir" component={Nugen}/>
+			<Route path="/nugen" component={Nugen}/>
 		</div>
 	</BrowserRouter>
 	,
