@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Heading from './Heading';
+import Fruit from './Fruit';
 import './Post.css';
 import 'whatwg-fetch';
 
@@ -11,9 +12,70 @@ class Post extends Component{
 			author: '',
 			message:'',
 			error:'',
-			posts: []
+			posts: [],
+			fruits: [
+					{
+						fruit_name: "Apple",
+						eaten_by: "Tahir"
+					},
+					{
+						fruit_name: "Banana",
+						eaten_by: "Tahir"
+					},
+					{
+						fruit_name: "Allu bukhara",
+						eaten_by: "Tahir"
+					},
+					{
+						fruit_name: "Grapes",
+						eaten_by: "Vikram"
+					},
+					{
+						fruit_name: "Nimbu",
+						eaten_by: "Vikram"
+					}
+				],
+				new_fruits: [
+						{
+							fruit_name: "Apple",
+							eaten_by: "Tahir"
+						},
+						{
+							fruit_name: "Banana",
+							eaten_by: "Tahir"
+						},
+						{
+							fruit_name: "Allu bukhara",
+							eaten_by: "Tahir"
+						},
+						{
+							fruit_name: "Grapes",
+							eaten_by: "Vikram"
+						},
+						{
+							fruit_name: "Nimbu",
+							eaten_by: "Vikram"
+						}
+					]
 		};
 	}
+
+	filterFruits = (e,eaten_by)=>{
+		if(eaten_by === "all"){
+			this.setState({
+				new_fruits: this.state.fruits
+			});
+		}else
+		{
+			let new_fruits = this.state.fruits.filter((fruit)=>{
+											return fruit.eaten_by.toLowerCase() === eaten_by.toLowerCase()
+									});
+			this.setState({
+				new_fruits: new_fruits
+			});
+		}
+	}
+
 	componentWillMount() {
 		this.fetchPosts();
 	}
@@ -93,7 +155,7 @@ class Post extends Component{
 				return response.json();
 			})
 			.then((res)=>{
-				if(res.id == undefined){
+				if(res.id === undefined){
 					this.setState({
 						message: "Post has been deleted successfully"
 					});
@@ -110,7 +172,7 @@ class Post extends Component{
 		}
 
 
-
+clickHandler
 	render(){
 		return(
 			<div>
@@ -129,6 +191,20 @@ class Post extends Component{
 										// <Heading title={post.title} author={post.author} id={post.id}/>
 
 										<Heading key={i} {...post} clickHandler={this.deletePost}/>
+									)
+								}
+							)
+					}
+					<h1 onClick={(e)=>this.filterFruits(e,'vikram')}>Eaten By Vikram</h1>
+					<h1 onClick={(e)=>this.filterFruits(e,'tahir')}>Eaten By Tahir</h1>
+					<h1 onClick={(e)=>this.filterFruits(e,'all')}>Show All</h1>
+					{
+							this.state.new_fruits.map(
+								(fruit,i)=>{
+									return(
+										// <Heading title={post.title} author={post.author} id={post.id}/>
+
+										<Fruit key={i} {...fruit}/>
 									)
 								}
 							)
