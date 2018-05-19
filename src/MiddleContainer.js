@@ -4,6 +4,7 @@ import EventHandling from './EventHandling';
 import 'whatwg-fetch';
 import Button from './Button';
 import Post from './Post';
+import User from './User';
 import {Link} from 'react-router-dom';
 
 class MiddleContainer extends Component {
@@ -28,13 +29,33 @@ class MiddleContainer extends Component {
 
 						<Button/>
 						<Link to="/">Go To App Component</Link>
-						<Post baseUrl={this.props.baseUrl}/>
+						<div style={style.postContainer}>
+							<Post baseUrl={this.props.baseUrl}/>
+						</div>
+						<div style={style.userContainer}>
+							<User/>
+						</div>
 						</div>
         );
     }
 }
 
-
+const style={
+	'postContainer': {
+		width:'500px',
+		height: 'auto',
+		background:'#444',
+		display:'inline-block',
+		verticalAlign:'top'
+	},
+	'userContainer': {
+		width:'500px',
+		height: 'auto',
+		background:'#e5e5e5',
+		display:'inline-block',
+		verticalAlign:'top'
+	}
+};
 
 
 export default MiddleContainer;
