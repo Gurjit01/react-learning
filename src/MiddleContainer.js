@@ -7,6 +7,7 @@ import Post from './Post';
 import User from './User';
 import {Link} from 'react-router-dom';
 
+
 class MiddleContainer extends Component {
 	constructor(props){
 		super(props);

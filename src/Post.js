@@ -3,6 +3,7 @@ import Heading from './Heading';
 import Fruit from './Fruit';
 import './Post.css';
 import 'whatwg-fetch';
+import Helper from './Helper';
 
 class Post extends Component{
 	constructor(props){
@@ -95,21 +96,13 @@ class Post extends Component{
 	}
 	save=()=>{
 		// fetch(`${this.props.baseUrl}/posts`,)
-		let post = {
+		let post = JSON.stringify({
 								title: this.state.title,
 								author: this.state.author
-							};
-		fetch(this.props.baseUrl + "/posts",{
-			method: 'POST',
-			headers: {
-    		'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(post)
-		})
-		.then((response) => {
-			return response.json();
-		})
-		.then((res)=>{
+							});
+		let res = Helper(this.props.baseUrl + "/posts",'POST',post);
+
+		res.then((res)=>{
 			if(res.id !== undefined){
 				this.setState({
 					message: "Post has been saved successfully"
@@ -121,25 +114,20 @@ class Post extends Component{
 				});
 			}
 		})
-		.catch((err) => {
-						console.log(err);
-		});
+
 	}
 
 
 
 
 		fetchPosts(){
-			fetch(this.props.baseUrl + "/posts")
-			.then((response) => {
-				return response.json();
-			})
-			.then((res)=>{
+			let url = this.props.baseUrl + "/posts";
+			let body = {};
+			let res = Helper(url,'GET',body);
+			res.then((res)=>{
 				this.setState({posts: res});
-			})
-			.catch((err) => {
-				console.log(err);
 			});
+
 		}
 
 

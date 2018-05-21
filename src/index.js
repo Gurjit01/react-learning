@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import Contact from "./Contact";
 import App from './App';
+import Login from './Login';
 import Nugen from './Nugen';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -13,6 +14,7 @@ ReactDOM.render(
 	<BrowserRouter>
 		<div>
 			<Route exact path="/" component={App}/>
+			<Route path="/login" component={Login}/>
 			<Route path="/nugen" component={Nugen}/>
 		</div>
 	</BrowserRouter>
