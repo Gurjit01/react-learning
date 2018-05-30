@@ -6,7 +6,7 @@ import Button from './Button';
 import Post from './Post';
 import User from './User';
 import {Link} from 'react-router-dom';
-
+import cookie from 'react-cookies';
 
 class MiddleContainer extends Component {
 	constructor(props){
@@ -14,9 +14,13 @@ class MiddleContainer extends Component {
 		this.state = {
 			count: 0
 		};
+		console.log(this.props.history);
 	}
 
-
+	logout =()=> {
+			cookie.remove('token');
+			this.props.history.push("/");
+		}
 
     render() {
         return (
@@ -31,6 +35,7 @@ class MiddleContainer extends Component {
 						<Button/>
 						<Link to="/">Go To App Component</Link>
 						<div style={style.postContainer}>
+							<button onClick={this.logout}>Logout</button>
 							<Post baseUrl={this.props.baseUrl}/>
 						</div>
 						<div style={style.userContainer}>

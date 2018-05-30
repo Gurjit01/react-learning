@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Helper from './Helper';
+import cookie from 'react-cookies'
+
+
 
 class Login extends Component{
 	constructor(){
@@ -30,6 +33,7 @@ class Login extends Component{
 		let res = Helper("http://vidyapeethclasses.in/api/v1/login",'POST',body);
 		res.then((res)=>{
 			if(res.access_token !== undefined){
+				cookie.save('token',res.access_token);
 	      this.props.history.push('/nugen');
 	    }else{
 	      alert("Wrong username/password");
